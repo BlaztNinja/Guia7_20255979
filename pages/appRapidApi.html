@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Explorador de Videojuegos (RapidAPI)</title>
+    <style>
+        .lista-item { cursor: pointer; transition: background-color 0.2s; }
+        .lista-item:hover { background-color: #f8f9fa; }
+        .lista-item.active { background-color: #0d6efd; color: white; }
+        .lista-item.active span { color: white !important; }
+        #contenedorDetalle img { max-width: 250px; display: block; margin: 0 auto; border-radius: 10px; }
+        .loader { display: none; text-align: center; padding: 20px; }
+        .texto-capitalizado { text-transform: capitalize; }
+    </style>
+</head>
+<body>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-4 text-primary fw-bold">Explorador de Videojuegos</h1>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Listado de Juegos</h4>
+                
+                <div id="loaderLista" class="loader">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p>Cargando lista...</p>
+                </div>
+                
+                <div id="mensajeErrorLista" class="alert alert-danger d-none"></div>
+                
+                <ul id="listaElementos" class="list-group shadow-sm">
+                </ul>
+            </div>
+
+            <div class="col-md-8">
+                <h4>Detalle del Juego</h4>
+                
+                <div id="loaderDetalle" class="loader">
+                    <div class="spinner-border text-success" role="status"></div>
+                    <p>Cargando detalles...</p>
+                </div>
+                
+                <div id="mensajeErrorDetalle" class="alert alert-danger d-none"></div>
+                
+                <div id="contenedorDetalle" class="card p-4 shadow-sm">
+                    <p class="text-muted text-center my-5">Selecciona un juego de la lista para ver sus detalles aquí.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/appRapidApi.js"></script>
+</body>
+</html>
